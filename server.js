@@ -5,7 +5,8 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleone={
+var articles = {
+    articleone: {
     title: 'Article one | Bhavana',
     heading: 'Article one',
     date: '21 aug,2017',
@@ -16,6 +17,32 @@ var articleone={
          <p>
              I know i should have started it before but atleast I am not giving up.
          </p>`
+    },
+    articletwo: {
+        title: 'Article two | Bhavana',
+    heading: 'Article two',
+    date: '24 aug,2017',
+    content: `
+     <p>
+             in friends tv show there are 6 main characters chandler,joey,ross,monica,rachel,pheoble the show was first aired in 1994 and had entire 10 seasons for 10 years.
+         </p>
+         <p>
+             chandler-sarcasm,monica-ocd,pheobe-weirdness,ross-expressions,rachel-fashion,joey-innocence are the things i like most in the show.
+         </p>`
+        
+    },
+    
+    articlethree: {
+        title: 'Article three | Bhavana',
+    heading: 'Article three',
+    date: '24 aug,2017',
+    content: ` <p>
+             Now i have to work on my voice and communication skills.But i am doing nothing for that what should be done then again i am expecting the result,which is pathetic by the way.
+         </p>
+         <p>
+            people think this is good and that is bad but there is no such this called good or bad its just persepction.
+         </p>`
+        }     
 };
 
 function createTemplate (data){
@@ -58,16 +85,11 @@ app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article-one',function(req,res){
-      res.send(createTemplate(articleone));
-});
-
-app.get('/article-two',function(req,res){
-    res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
-});
-
-app.get('/article-three',function(req,res){
-    res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));   
+app.get('/:articleName',function(req,res){
+    //articleName == article-one
+    //articles[articleName] == {} content object for article one
+    var articleName = req.params.articleName;
+      res.send(createTemplate(articles[articleName]));
 });
 
 app.get('/ui/style.css', function (req, res) {
