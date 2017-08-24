@@ -6,7 +6,7 @@ var app = express();
 app.use(morgan('combined'));
 
 var content={
-    title: 'Article-one | Bhavana',
+    title: 'Articleone | Bhavana',
     heading: 'Article-one',
     date: '21 aug,2017',
     content: `
@@ -50,9 +50,9 @@ function createTemplate (data){
      </div>
     </body>
   </html>
-  ';
+  `;
   return htmlTemplate;
-}; 
+} 
 
 app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, 'ui', 'index.html'));
