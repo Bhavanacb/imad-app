@@ -5,10 +5,12 @@ body {
 
 .center {
     text-align: center;
+    margin: 0 auto;
+    max-width:600px;
 }
 
 .text-big {
-    font-size: 300%;
+    font-size: 500%;
 }
 
 .bold {
@@ -16,10 +18,10 @@ body {
 }
 
 .img-medium {
-    height: 200px;
+    height: 500px;
 }
 .container {
-          max-width:800px;
+          max-width:600px;
           margin: 0 auto;
           color: green;
           font-family: times new roman;
