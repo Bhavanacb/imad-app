@@ -20,7 +20,7 @@ button.onclick = function () {
     };
     
     //Make the request
-    request.open('GET', 'HTTP://bhavanacb97.imad.hasura-app.io/counter', true);
+    request.open('GET', 'http://bhavanacb97.imad.hasura-app.io/counter', true);
     request.send(null);
     
 };
