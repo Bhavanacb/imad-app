@@ -27,9 +27,7 @@ button.onclick = function () {
 //Submit name
 var nameInput = document.getElementById('name');
 var name = nameInput.value;
-var names = [];
-var submit = document.getElementById('submit_btn');
-submit.onclick = function() {
+var namesaclick = function() {
     //Make a request to the server and send the name
     names.push(name);
    // cons
